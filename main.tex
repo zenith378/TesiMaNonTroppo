@@ -69,6 +69,8 @@ aspectratio=169,
 \mail{g.cordova@studenti.unipi.it}
 \institute[Università di Pisa]{Dipartimento di Fisica E. Fermi\\
 Università di Pisa}
+\mail{https://github.com/zenith378/TesiMaNonTroppo}
+
 \date{\today}
 \titlegraphic[width=3cm]{cherubino_pant541}{}
 %\definecolor{Veronagrayblue} {RGB}{0,91,129}
@@ -117,7 +119,7 @@ Università di Pisa}
 
 
 \section*{Overview}
-\begin{frame}{Outline}
+\begin{frame}[noframenumbering]{Outline}
     \tableofcontents[]{}
 \end{frame}
 \section{Il percorso fino alla tesi}
@@ -261,42 +263,6 @@ Se ti interessano i rivelatori segui il corso di Instrumentation for Fundamental
     Cos'è un rivelatore a pixel, perché si usa il silicio sono tutte domande a cui troverete risposta nei corsi di "Introduzione alla Fisica Subnucleare", "Laboratorio di Interazioni Fondamentali" o "Instrumentation for Fundamental Physics"
 \end{frame}
 
-\begin{frame}{Il nuovo sistema di trigger di LHCb}
-A LHC si ha una collisione ogni 25 nanosecondi (o 40 milioni di collisioni al secondo). Non tutte sono utili alle analisi che vogliamo fare. Vanno selezionate con un sistema trigger.
-\begin{columns}
-    \column{0.3\textwidth}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.9\linewidth]{LHCb_Trigger_RunII_May2015.jpeg}
-        %\caption{Caption}
-        %\label{fig:enter-label}
-    \end{figure}
-    \column{0.3\textwidth}
-    \small
-    Fino al Run II, il sistema di trigger era un misto fra hardware e software. Prima si fanno dei tagli con l'accetta guardando le informazioni dei rivelatori.
-    
-    \vspace{0.3cm}
-    
-    Dal Run III, LHCb ha detto fuck this, noi siamo superfighi e prima di buttare via eventi che ci potrebbero servire vogliamo esserne certi e hanno sviluppato un trigger software based in cui si ricostruisce l'intero evento in tempo reale.
-    \column{0.3\textwidth}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.9\linewidth]{LHCb_Trigger_RunIII_May2015.jpeg}
-        %\caption{Caption}
-        %\label{fig:enter-label}
-    \end{figure}
-\end{columns}
-\end{frame}
-\begin{frame}{La Real Time Analysis (RTA)}
-La ricostruzione in tempo reale non è supportata dalle classiche CPU, ma bisogna dotarsi di sistemi di calcolo eterogeneo che permettono anche calcolo parallelo (GPU e FPGA).
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{hidef_RTA_dataflow_widescreen.png}
-    %\caption{Caption}
-    %\label{fig:enter-label}
-\end{figure}
-    
-\end{frame}
 \begin{frame}{Che cosa si intende con beamline}
 \begin{columns}
     \column{0.48\textwidth}
@@ -437,6 +403,7 @@ E anche sui dati veri funziona! Ovviamente con una risoluzione leggermente peggi
             %\label{fig:enter-label}
         \end{figure}
     \end{columns}
+    Tutto questo è possibile perché le operazioni di clustering, conteggi, somme e prodotti si possono implementare su FPGA che vengono lette a 40 MHz, cioè veramente in tempo reale
 \end{frame}
 
 \begin{frame}{La bellezza di un lavoro sperimentale...}
@@ -504,7 +471,7 @@ Al momento sto investigando perché il mio stimatore funziona molto in una compo
     \end{itemize}
         \end{columns}
         \vfill
-Come vedete anche da questi numeri LHCb non è un'esperimento grandissimo come potrebbe essere ATLAS o CMS. \\
+LHCb non è un'esperimento grandissimo come potrebbe essere ATLAS o CMS. \\
 Ma siamo comunque una collaborazione internazionale composta da 1692 persone provenienti da 22 paesi diversi!
 \end{frame}
 \subsection{Le cose belle}
@@ -521,7 +488,7 @@ Ma siamo comunque una collaborazione internazionale composta da 1692 persone pro
     \end{itemize}
     \begin{figure}
         \centering
-        \includegraphics[width=0.3\textwidth]{caverna.jpeg}
+        \includegraphics[width=0.3\textwidth]{office.jpeg}
                 \includegraphics[width=0.3\textwidth]{mio_plot.jpeg}
         \includegraphics[width=0.3\textwidth]{birra.jpeg}
 
@@ -534,7 +501,7 @@ Ma siamo comunque una collaborazione internazionale composta da 1692 persone pro
     \item Il lavoro richiesto è molto (ma anche appagante)
     \item L'esperimento si trova in una fase critica 
     \item Il relatore è molto impegnato e spesso non raggiungibile
-    \item Il lavoro di tesi è un po' lungo
+    \item Il lavoro di tesi è un po' lungo (>9 mesi)
 \end{itemize}
 \begin{figure}
         \centering
@@ -564,12 +531,51 @@ Ma siamo comunque una collaborazione internazionale composta da 1692 persone pro
 \end{frame}
 
 \beamertemplateshadingbackground{structure.fg!90}{structure.fg}
-\begin{frame}[plain]
+\begin{frame}[plain,noframenumbering]
 	\vfill
 	\centering
 	{
 		\centering \Huge \color{white} Grazie per l'attenzione!%\\[10pt]Questions?
 	}
 	\vfill
+\end{frame}
+
+\beamertemplateshadingbackground{white}{white}
+\section*{Backup}
+\begin{frame}[plain,noframenumbering,c]{Il nuovo sistema di trigger di LHCb}
+A LHC si ha una collisione ogni 25 nanosecondi (o 40 milioni di collisioni al secondo). Non tutte sono utili alle analisi che vogliamo fare. Vanno selezionate con un sistema trigger.
+\begin{columns}
+    \column{0.3\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{LHCb_Trigger_RunII_May2015.jpeg}
+        %\caption{Caption}
+        %\label{fig:enter-label}
+    \end{figure}
+    \column{0.3\textwidth}
+    \small
+    Fino al Run II, il sistema di trigger era un misto fra hardware e software. Prima si fanno dei tagli con l'accetta guardando le informazioni dei rivelatori.
+    
+    \vspace{0.3cm}
+    
+    Dal Run III, LHCb ha detto fuck this, noi siamo superfighi e prima di buttare via eventi che ci potrebbero servire vogliamo esserne certi e hanno sviluppato un trigger software based in cui si ricostruisce l'intero evento in tempo reale.
+    \column{0.3\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{LHCb_Trigger_RunIII_May2015.jpeg}
+        %\caption{Caption}
+        %\label{fig:enter-label}
+    \end{figure}
+\end{columns}
+\end{frame}
+\begin{frame}[plain,noframenumbering,c]{La Real Time Analysis (RTA)}
+La ricostruzione in tempo reale non è supportata dalle classiche CPU, ma bisogna dotarsi di sistemi di calcolo eterogeneo che permettono anche calcolo parallelo (GPU e FPGA).
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{hidef_RTA_dataflow_widescreen.png}
+    %\caption{Caption}
+    %\label{fig:enter-label}
+\end{figure}
+    
 \end{frame}
 \end{document}
